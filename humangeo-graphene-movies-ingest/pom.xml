@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+	  <groupId>com.humangeo.graphene</groupId>
+	  <artifactId>humangeo-graphene-movies</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>humangeo-graphene-movies-ingest</artifactId>
+	<description>Ingest scripts and utilities that should not be deployed on a web server.</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-ingest</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-model</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-dao</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-dao-sql</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-dao-neo4j</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-dao-titan</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-util</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${base.project.groupId}</groupId>
+			<artifactId>graphene-introspect</artifactId>
+			<version>${base.project.version}</version>
+		</dependency>
+		<!-- This may not be the best way to do this. See build notes in this module. -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>humangeo-graphene-movies-web</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<classifier>classes</classifier>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
